@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no"
+  />
+
+  <meta
+    name="description"
+    content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI."
+  />
+  <meta name="keywords" content="Semantic-UI, Theme, Design, Template" />
+  <meta name="author" content="Juan Fecci" />
+  <meta name="theme-color" content="#ffffff" />
+
+
+  <title>NIV</title>
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    type="text/css"
+  />
+
+  <style type="text/css">
+
+    html {
+  scroll-behavior: smooth;
+}
+
+    * , h1, h2, h3, h4{
+        box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del contenedor */
+        margin: 0;
+        padding: 0;
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    html, body{
+      height: 100%;
+      margin:  0;
+      padding-right: 0;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    #particles-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        background: linear-gradient(to bottom, #0023ff , #011446 );
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: grayscale;
+      background-color: transparent
+      color: white;
+    }
+
+    .ui.inverted.segment {
+          background-color: #777;
+        }
+
+        .ui.vertical.segment:not(.inverted) {
+          padding-top: 6rem;
+          padding-bottom: 6rem;
+        }
+
+        .six.wide.column img {
+          width: 100%;
+        }
+
+        .ui.borderless.inverted.menu {
+          background-color: #2f2f2f;
+          border-radius: 1em;
+          flex-wrap: wrap;
+        }
+
+        .ui.borderless.inverted.menu .active.item {
+          background-color: black;
+        }
+
+    .header-navbar {
+      text-align: center;
+      border-radius: 1em;
+    }
+
+    .niv-navbar{
+      font-size: 2.1em;
+        text-align: center;
+        color: #dcd92f ;
+        font-style: bold;
+        padding-top: .35em;
+        padding-bottom: .3em;
+        padding-right: .2em;
+        padding-left: .4em;
+        font-family: "Times New Roman", Times, serif;
+
+    }
+
+    .niv-navbar2{
+      font-size: 0.45em;
+        text-align: center;
+        color: white;
+        padding-top: .2em;
+    }
+
+    .active-plus {
+        border-bottom-color: white;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+      }
+
+    .hero-section{
+      height: 90vh;
+      display: flex; /* Flexbox para centrar contenido */
+      align-items: center; /* Centra verticalmente */
+      justify-content: center; /* Centra horizontalmente */
+      flex-direction: column; /* Coloca el contenido en columna */
+      color: yellow; /* Color de texto */
+      text-align: center; /* Alinea el texto al centro */
+    }
+
+      .home-content {
+      height: 100vh;
+      display: flex; /* Flexbox para centrar contenido */
+      align-items: center; /* Centra verticalmente */
+      justify-content: center; /* Centra horizontalmente */
+      flex-direction: column; /* Coloca el contenido en columna */
+      color: yellow; /* Color de texto */
+      text-align: center; /* Alinea el texto al centro */
+        }
+
+    .round-box{
+      border:0.3em solid #e1e1e0  ;
+      border-radius:2em;
+      background-color: #FFFFFF70;
+      color: black;
+    }
+
+    .content-round-box{
+      margin: 1.5em;
+    }
+
+    .GFG {
+            text-shadow: -1px 1px 0 #e7e7e7  ,
+                         1px 1px 0 #e7e7e7  ,
+                         1px -1px 0 #e7e7e7  ,
+                         -1px -1px 0 #e7e7e7  ;
+        }
+
+
+  </style>
+</head>
+
+<body>
+
+    <!-- Contenedor para las partículas -->
+    <div id="particles-background"></div>
+
+      <div class="ui tablet computer only padded grid">
+      <div class="ui container" style="padding-top: 2em;">
+        <div class="ui inverted borderless huge menu">
+
+          <a class=" header-navbar" href="#contacto" style="background-color: #2f2f2f;">
+
+            <table>
+              <tr>
+                <th>
+                  <div class="niv-navbar">
+                <b>NIV</b>
+                  </div>
+                </th>
+                <th>
+                  <div style="text-align: left; color: white; font-size: 0.9em; padding-right: 0.5em; font-family: 'Times New Roman', Times, serif;">
+                      <div style="margin-bottom: 0em;">
+                        Online    
+                      </div>
+                      <div style="margin-top: 0em; font-family: 'Times New Roman' Times, serif;">
+                        Academy
+                      </div>
+                     
+                  </div>
+                  
+                </th>
+              </tr>
+            </table>
+              
+          <!--  
+          <a class="item" href="#contacto" style="padding: 0 ; padding-right: 1em; padding-left: 1em;">
+            <p style="font-size: 1.2em; color: #f8ffb9 ;">Solicitar Curso</p>
+          </a> 
+          
+          <a class="item">About</a>
+          <a class="item">Contact</a>
+          <a class="ui dropdown item">
+            Dropdown <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item">Action</div>
+              <div class="item">Another action</div>
+              <div class="item">Something else here</div>
+              <div class="ui divider"></div>
+              <div class="header">Navbar header</div>
+              <div class="item">Seperated link</div>
+              <div class="item">One more seperated link</div>
+            </div>
+          </a>
+        -->
+        
+          <div class="right menu" >
+            <a class=" item" style="padding: 0 ; padding-right: 1em; padding-left: 0.5em;">
+              <p style="font-size: 1.2em; color: white ;"> <i class="circular world icon"> </i> Change Language</p>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+    </div>
+<div class="ui mobile only padded grid">
+      <div class="ui top  huge inverted fluid menu" style="background-color:#2f2f2f;">
+          <div class="niv-navbar">
+            <table>
+              <tr>
+                <th>
+                <b>NIV</b>
+                </th>
+                <th>
+                  <div style="text-align: left; color: white; font-size: 0.5em; padding-right: 0.5em;padding-left: 0.3em; font-family: 'Times New Roman', Times, serif;">
+                      <div style="margin-bottom: 0em;">
+                        Online    
+                      </div>
+                      <div style="margin-top: 0em; font-family: 'Times New Roman' Times, serif;">
+                        Academy
+                      </div>
+                     
+                  </div>
+                  
+                </th>
+              </tr>
+            </table>
+          </div>
+
+          <div class="right menu">
+<div class="ui simple dropdown item inverted">
+    <i class="content circular icon "></i>
+    <div class="menu">
+      <!--
+      <div class="item" style="background-color: #2f2f2f !important; color: #ffffff;"><a href="#contacto" style="color: #ffffff">Solicitar Curso</a></div> 
+    -->
+      <div class="item" style="background-color: #2f2f2f !important; color: #ffffff;">
+        <div style="color: #ffffff;"> <i class="circular world icon"> </i>Change Language</div>
+          
+      </div>
+    </div>
+  </div>
+          </div>
+          
+        
+      </div>
+    </div>
+
+<div class="ui tablet computer only grid">
+  <div class="column">
+    <div class="home-content" style="height: 83vh;">
+        <h4 style="font-size:2.3em; color: white;"> Bienvenido a:</h4>
+        <h1 style="font-size:11em; color: #dcd92f;  " ><b>NIV</b></h1>
+        <h2 style="font-size:3em; color: white; "><b>Online Academy</b></h2>
+        <p style="font-size:2em; color: #fdff71 ; padding-top: 1em;  ">
+          Plataforma de Clases de Inglés 
+          <br> y Tutorías para Empresas
+          
+        </p>
+        <div class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;"><a href="#contacto" style="color:white;">Envíanos un mensaje <br> para solicitar un curso</a></div>
+        <a href="#informacion" style="color:white">
+        <i class="angle double down icon " style="font-size:2.5em; color:white" href="#informacion"></i><br> Más info</a> 
+      </div>
+  </div>
+  </div>
+
+<div class="ui mobile only grid">
+  <div class="column">
+    <div class="home-content" style="height: 82vh;">
+        <h4 style="font-size:2.3em; color: white;"> Bienvenido a:</h4>
+        <h1 style="font-size:7em; color: #dcd92f;  " ><b>NIV</b></h1>
+        <h2 style="font-size:3em; color: white; line-height: 0.2em;"><b>Online Academy</b></h2>
+        <p style="font-size:1.8em; color: #fdff71 ; padding-top: 1.5em; margin-bottom: 0.7em; ">
+          Plataforma de Clases de Inglés y Tutorías para Empresas
+          
+        </p>
+        <div class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 0.9em;"><a href="#contacto" style="color:white;">Ingresa aquí <br> para solicitar un curso</a></div>
+
+        <a href="#informacion" style="color:white" >
+        <i class="angle double down icon " style="font-size:2em; color:white"></i><br> Más info</a>
+      </div>
+  </div>
+</div>
+
+<!-- Contenido de la página -->
+
+<div class="ui hidden section divider"></div>
+     <div class="ui ui centered middle aligned four stackable grid container" id="informacion">     
+
+      <div class="three column row round-box" id="informacion">
+        <div class="column">
+          <div class="round-box"> <div class="content-round-box">
+            <p style="margin-bottom:.7em; font-size: 1.8em;">
+              <i class="circular rss icon" style="font-size:0.6em;"> </i> Todas las clases con modalidad <b>online</b>
+            </p>
+          </div></div>
+          
+        </div>
+        <div class="column">
+          <div class="round-box"> <div class="content-round-box">
+            <p style="margin-bottom:.7em; font-size: 1.8em;">
+              <i class="circular star outline icon" style="font-size:0.6em;"> </i> Con cursos para <b>7 niveles de ingles</b> y uno de acompañamiento para avanzados
+            </p>
+          </div></div>
+        </div>
+
+        <div class="column">
+          <div class="round-box"> <div class="content-round-box">
+            <p style="margin-bottom:.7em; font-size: 1.8em;">
+              <i class="circular calendar alternate outline icon" style="font-size:0.6em;"> </i> Con <b>disponibilidad</b> de hora y <b>flexibilidad</b> para casos especiales
+            </p>
+          </div></div>
+        </div>
+        <!--
+        <div class="column">
+          <h1 class="ui header">Heading</h1>
+          <p>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+            tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+            fermentum massa justo sit amet risus. Etiam porta sem malesuada
+            magna mollis euismod. Donec sed odio dui.
+          </p>
+          <div class="ui small primary button">View details &raquo;</div>
+        </div> -->
+      </div>
+      <div class="ui hidden section divider"></div>
+      <div class="row round-box">
+        <div class="twelve wide column">
+            <div class="round-box"> <div class="content-round-box">
+            <p style="font-size: 1.5em; margin-bottom: 0.2em;">
+              <i>Clases impartidas por:</i>
+            </p>
+            <p style="font-size: 2.5em; margin-bottom: 0.2em;">
+              <b>Sheng H. Huang Torres</b>
+            </p>
+            <p style="font-size: 1.6em;">
+              Educador experimentado en inglés con amplia trayectoria en capacitación universitaria y corporativa.
+            </p>
+          </div></div>
+          </div>
+          <div class="three wide right aligned column">
+            <img
+              class="ui image"
+              src="perfil.jpg"
+            />
+          </div>
+      </div>
+      <div class="ui hidden section divider"></div>
+      <div class="row round-box" style="background-color: #FFFFFF95">
+        <div class="column" style="text-align:center; padding: 0 !important;">
+          
+             <p style="margin-bottom:.7em; font-size: 2em; margin: 0.3em;"  id="contacto">
+               Si estas interesado en <b>solicitar un curso</b>, no dudes en <b>contactarnos</b> por los siguientes medios:
+            </p>
+
+  <div class="ui container" >
+
+    <div class="ui tablet computer only grid" style="font-size: 2.3em; margin: 0.4em;">
+      <div class="row" style="flex: 1; width: 50vh;">
+        <div class="column">
+            <div class="round-box GFG" style="padding: 0.2em"> 
+              <a href="https://wa.me/56987089931" style="color: #009725;"><i class="circular whatsapp icon" style="font-size:1em;"> </i>+56 9 8708 9931</a>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="flex: 1; width: 50vh;">
+        <div class="column">
+          <div class="round-box GFG" style="padding: 0.2em;">
+            <a href="mailto:shengx95_2@hotmail.com" style="color: #0046a4 ;">
+              <i class="circular envelope outline icon" style="font-size:1em;"> </i> Shengx95_2@hotmail.com</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui mobile only centered middle aligned grid" style="font-size: 1.5em;">
+      <div class="row">
+          <div class="round-box GFG" style="padding: 0.2em;"> 
+              <a href="https://wa.me/56987089931" style="color: #009725;"><i class="whatsapp icon"> </i>+56 9 8708 9931</a>
+          </div>
+      </div>
+      <div class="row">
+        <div class="round-box GFG" style="padding: 0.2em;margin-bottom: 1em;">
+            <a href="mailto:shengx95_2@hotmail.com" style="color: #0046a4 ;">
+              <i class="envelope outline icon"> </i> Shengx95_2@hotmail.com</a>
+            </div>
+      </div>
+          
+
+          
+
+    </div>
+  </div>
+      </div>
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="column" style="color:white;">
+          <div class="ui divider"></div>
+          <footer>&copy; 2024 Nitimur in Vetitum</footer>
+          <footer>Página creada por Juan Fecci</footer>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $(".ui.toggle.button").click(function() {
+        $(".mobile.only.grid .ui.vertical.menu").toggle(100);
+      });
+
+      $(".ui.dropdown").dropdown();
+    });
+  </script>
+
+    <!-- Librería tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.4/tsparticles.bundle.min.js"></script>
+
+      <!-- Configuración de las partículas -->
+    <script>
+    window.onload = function() {
+        tsParticles.load("particles-background", {
+            fpsLimit: 60,
+            background: {
+                color: 'transparent',
+            },
+            particles: {
+                number: {
+                    value: 12,
+                    density: {
+                        enable: true,
+                        value_area: 800,
+                    },
+                },
+                shape: {
+                    type: ["circle", "square", "triangle", "polygon"],
+                    polygon: {
+                        sides: 6,
+                    },
+                },
+                stroke: {
+                    width: 5, // Ancho del borde de las figuras
+                    color: ["#dcd92f"] // Color del borde de las figuras
+                },
+
+                color: {
+                    value: "#ffffff"
+                },
+
+                opacity: {
+                    value: 0.4,
+                    random: true,
+                },
+                size: {
+                    value: 45,
+                    random: { enable: true, minimumValue: 10 },
+                },
+                move: {
+                    enable: true, // Habilita el movimiento
+                    direction: "top", // Dirección hacia arriba
+                    outModes: {
+                        default: "out", // Las partículas salen y no vuelven a aparecer desde abajo
+                    },
+                    speed: 0.5, // Velocidad de movimiento
+                    straight: false, // Si se desea movimiento recto (false permite un movimiento más fluido)
+                },
+            },
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: false,
+                    },
+                    onClick: {
+                        enable: false,
+                    },
+                },
+            },
+            detectRetina: true,
+        });
+    };
+</script>
+
+</body>
+</html>
