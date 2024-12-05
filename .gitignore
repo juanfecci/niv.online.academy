@@ -1,0 +1,23 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+.DS_Store
+
+# Virtualenv
+venv/
+env/
+*.env
+.env
+
+# VS Code
+.vscode/
+
+# Sublime Text 
+*.tmlanguage.cache 
+*.tmPreferences.cache 
+*.stTheme.cache 
+*.sublime-workspace 
+*.sublime-project 
