@@ -1,6 +1,6 @@
 import csv
 from django.core.management.base import BaseCommand
-from your_app.models import Question  # Cambia 'your_app' por el nombre de tu aplicación
+from diagnostico.models import Question  # Cambia 'your_app' por el nombre de tu aplicación
 
 class Command(BaseCommand):
     help = 'Importa preguntas desde un archivo CSV al modelo Question'
