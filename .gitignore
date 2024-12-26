@@ -21,3 +21,5 @@ env/
 *.stTheme.cache 
 *.sublime-workspace 
 *.sublime-project 
+
+diagnostic_test_final.csv
