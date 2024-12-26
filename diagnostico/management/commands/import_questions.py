@@ -16,6 +16,7 @@ class Command(BaseCommand):
             for row in reader:
                 # Crear una nueva pregunta en la base de datos
                 question = Question(
+                    id_question=row['id'],
                     text=row['text'],
                     option_1=row['option_1'],
                     option_2=row['option_2'],
