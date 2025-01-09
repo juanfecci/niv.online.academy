@@ -1,0 +1,180 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no"
+  />
+
+  <meta
+    name="description"
+    content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI."
+  />
+  <meta name="keywords" content="Semantic-UI, Theme, Design, Template" />
+  <meta name="author" content="Juan Fecci" />
+  <meta name="theme-color" content="#ffffff" />
+
+
+  <title>Prueba de Diagnóstico - Página 1</title>
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    type="text/css"
+  />
+
+  <style type="text/css">
+
+    html {
+  scroll-behavior: smooth;
+}
+
+    * , h1, h2, h3, h4{
+        box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del contenedor */
+        margin: 0;
+        padding: 0;
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    html, body{
+      height: 100%;
+      margin:  0;
+      padding-right: 0;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    #particles-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        background: radial-gradient(#08438F 20%, #061238 );
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: grayscale;
+      background-color: transparent
+      color: white;
+    }
+
+    .ui.inverted.segment {
+          background-color: #777;
+        }
+
+        .ui.vertical.segment:not(.inverted) {
+          padding-top: 6rem;
+          padding-bottom: 6rem;
+        }
+
+        .six.wide.column img {
+          width: 100%;
+        }
+
+        .ui.borderless.inverted.menu {
+          background-color: #2f2f2f;
+          border-radius: 1em;
+          flex-wrap: wrap;
+        }
+
+        .ui.borderless.inverted.menu .active.item {
+          background-color: black;
+        }
+
+    .header-navbar {
+      text-align: center;
+      border-radius: 1em;
+    }
+
+    .niv-navbar{
+      font-size: 2.1em;
+        text-align: center;
+        color: #dcd92f ;
+        font-style: bold;
+        padding-top: .35em;
+        padding-bottom: .3em;
+        padding-right: .2em;
+        padding-left: .4em;
+        font-family: "Times New Roman", Times, serif;
+
+    }
+
+    .niv-navbar2{
+      font-size: 0.45em;
+        text-align: center;
+        color: white;
+        padding-top: .2em;
+    }
+
+    .active-plus {
+        border-bottom-color: white;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+      }
+
+    .hero-section{
+      height: 90vh;
+      display: flex; /* Flexbox para centrar contenido */
+      align-items: center; /* Centra verticalmente */
+      justify-content: center; /* Centra horizontalmente */
+      flex-direction: column; /* Coloca el contenido en columna */
+      color: yellow; /* Color de texto */
+      text-align: center; /* Alinea el texto al centro */
+    }
+
+      .home-content {
+      height: 100vh;
+      display: flex; /* Flexbox para centrar contenido */
+      align-items: center; /* Centra verticalmente */
+      justify-content: center; /* Centra horizontalmente */
+      flex-direction: column; /* Coloca el contenido en columna */
+      color: yellow; /* Color de texto */
+      text-align: center; /* Alinea el texto al centro */
+        }
+
+    .round-box{
+      border:0.3em solid #e1e1e0  ;
+      border-radius:2em;
+      background-color: #FFFFFF70;
+      color: black;
+    }
+
+    .content-round-box{
+      margin: 1.5em;
+    }
+
+    .GFG {
+            color: black;
+            font-size: 50px;
+            text-shadow: -1px 1px 0 #e0e0e0,
+                         1px 1px 0 #e0e0e0,
+                         1px -1px 0 #e0e0e0,
+                         -1px -1px 0 #e0e0e0;
+        }
+
+
+  </style>
+</head>
+
+<body>
+
+<h1>Resultados</h1>
+<ul>
+    {% for answer in answers %}
+        <li>
+            Pregunta {{ answer.question_id }}: 
+            {% if answer.is_correct %}
+                Correcta
+            {% else %}
+                Incorrecta
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+</body>

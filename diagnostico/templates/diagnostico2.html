@@ -274,11 +274,64 @@
       <div class="row round-box" width="100%" style="background-color: #FFFFFFc0;margin-top: 3em;">
 
         <p class="GFG" style="font-size: 2.8em; margin-top: 0.5em; margin-bottom: 0;">
-              Prueba de Diagnóstico - Página 1 de 10
+              Prueba de Diagnóstico - Página {{actual_page}} de 10
+              <!-- Cambiar página -->
             </p>
 
+        <form method="post" action="{% url 'diagnostico:prueba_diagnostico2' %}" style="width:100%">
+          {% csrf_token %}
+          {% for question in questions %}
+            <div class="round-box" style="padding:1.5em; margin: 3em;"> <div class="content-round-box">
 
-        
+                <div style="text-align:left">
+                  <p style="font-size: 1.6em;">
+                  {{question.id}}. {{ question.text }}
+                  <input type="hidden" name="questions_ids" value="{{ question.id }}">
+                  <br>
+                  <div style="font-size: 1.6em; line-height:1">
+
+                    <input type="radio" name="selected_options_{{ question.id }}" value="1" /> {{ question.option_1 }}
+                    <br>
+
+                    <input type="radio" name="selected_options_{{ question.id }}" value="2" /> {{ question.option_2 }}
+                    <br>
+
+                    <input type="radio" name="selected_options_{{ question.id }}" value="3" /> {{ question.option_3 }}
+                    <br>
+
+                    <input type="radio" name="selected_options_{{ question.id }}" value="4" /> {{ question.option_4 }}
+                    <br>
+
+                    </div>
+                    
+                    </p>            
+
+                </div>
+                
+            </div></div>
+
+          {% endfor %}
+
+          <div class="ui grid">
+              <div class="row one column">
+                  <!--<div class="column">
+                              <div class="ui google plus  inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;"><a href="#contacto" style="color:white;">
+                      Volver a la página anterior</a></div>
+                  </div>
+                          <div class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;"><a href="#contacto" style="color:white;">
+                  Siguiente página</a></div>
+                -->
+
+                  <div class="column">
+                    <button type="submit" class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;">Siguiente página</button>
+                  </div>
+
+              </div>
+          </div>
+
+        </form>
+
+        <!--
         <form method="post" action="" style="width:100%">
 
             <div class="round-box" style="padding:1.5em; margin: 3em;"> <div class="content-round-box">
@@ -339,7 +392,7 @@
                 </div>
             </div>
         </div>
-        </form> </div>
+        </form> --></div>
     </div>
 
 
