@@ -173,7 +173,7 @@
         <div class="ui inverted borderless huge menu">
 
           <a class=" header-navbar" href="#contacto" style="background-color: #2f2f2f;">
-<a class=" header-navbar" href="#contacto" style="background-color: #2f2f2f;">
+<a class=" header-navbar" href="{% url 'home:home1' %}" style="background-color: #2f2f2f;">
 
             <table>
               <tr>
@@ -229,7 +229,7 @@
     </div>
 <div class="ui mobile only padded grid">
       <div class="ui top  huge inverted fluid menu" style="background-color:#2f2f2f;">
-          <a class="niv-navbar" href="#contacto">
+          <a class="niv-navbar" href="{% url 'home:home1' %}">
             <table>
               <tr>
                 <th>
@@ -281,26 +281,13 @@
           y Tutorías para Empresas
           
         </p>
-        <div class="ui vk inverted massive button" style= "padding: 0.5em;"><a href="#contacto" style="color:white;">Ingresa aquí <br> para ver tu nivel de ingles</a></div>
-        <div class="ui flowing popup top left transition visible animating scale out">
-  <div class="ui three column divided center aligned grid">
-    <div class="column">
-      <h4 class="ui header">Basic Plan</h4>
-      <p><b>2</b> projects, $10 a month</p>
-      <div class="ui button">Choose</div>
-    </div>
-    <div class="column">
-      <h4 class="ui header">Business Plan</h4>
-      <p><b>5</b> projects, $20 a month</p>
-      <div class="ui button">Choose</div>
-    </div>
-    <div class="column">
-      <h4 class="ui header">Premium Plan</h4>
-      <p><b>8</b> projects, $25 a month</p>
-      <div class="ui button">Choose</div>
-    </div>
-  </div>
-</div>
+        <a href="{% url 'diagnostico:prueba_diagnostico' %}">
+          
+          <div class="ui vk inverted massive button" style= "padding: 0.5em;"><div style="color:white;">Ingresa aquí <br> para ver tu nivel de ingles</div></div>
+
+        </a>
+        
+        
 
 
         <a href="#informacion" style="color:white; padding-top: 3em;">
@@ -319,7 +306,12 @@
           Plataforma de Clases de Inglés y Tutorías para Empresas
           
         </p>
-        <div class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 0.9em;"><a href="#contacto" style="color:white;">Ingresa aquí <bR> para ver tu nivel de ingles</a></div>
+
+        <a href="{% url 'diagnostico:prueba_diagnostico' %}">
+          
+          <div class="ui vk inverted massive button" style= "padding: 0.5em;margin-bottom: 0.9em;"><div style="color:white;">Ingresa aquí <br> para ver tu nivel de ingles</div></div>
+
+        </a>
 
         <a href="#informacion" style="color:white" >
         <i class="angle double down icon " style="font-size:2em; color:white"></i><br> Más info</a>
