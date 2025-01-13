@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no"
+  />
+
+  <meta
+    name="description"
+    content="Resultados de prueba de diagnostico para poder solicitar cursos de ingles en NIV-Online Academy"
+  />
+  <meta name="keywords" content="Resultados, Diagnóstico, Clases, Ingles, NIV" />
+  <meta name="author" content="Juan Fecci" />
+  <meta name="theme-color" content="#ffffff" />
+
+
+  <title>Resultados - NIV</title>
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    type="text/css"
+  />
+
+  <style type="text/css">
+
+    html {
+  scroll-behavior: smooth;
+}
+
+    * , h1, h2, h3, h4{
+        box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del contenedor */
+        margin: 0;
+        padding: 0;
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    html, body{
+      height: 100%;
+      margin:  0;
+      padding-right: 0;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    #particles-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        background: radial-gradient(#08438F 20%, #061238 );
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: grayscale;
+      background-color: transparent
+      color: white;
+    }
+
+    .ui.inverted.segment {
+          background-color: #777;
+        }
+
+        .ui.vertical.segment:not(.inverted) {
+          padding-top: 6rem;
+          padding-bottom: 6rem;
+        }
+
+        .six.wide.column img {
+          width: 100%;
+        }
+
+        .ui.borderless.inverted.menu {
+          background-color: #2f2f2f;
+          border-radius: 1em;
+          flex-wrap: wrap;
+        }
+
+        .ui.borderless.inverted.menu .active.item {
+          background-color: black;
+        }
+
+    .header-navbar {
+      text-align: center;
+      border-radius: 1em;
+    }
+
+    .niv-navbar{
+      font-size: 2.1em;
+        text-align: center;
+        color: #dcd92f ;
+        font-style: bold;
+        padding-top: .35em;
+        padding-bottom: .3em;
+        padding-right: .2em;
+        padding-left: .4em;
+        font-family: "Times New Roman", Times, serif;
+
+    }
+
+    .niv-navbar:visited{
+      color: #dcd92f;
+    }
+
+    .niv-navbar2{
+      font-size: 0.45em;
+        text-align: center;
+        color: white;
+        padding-top: .2em;
+    }
+
+    .active-plus {
+        border-bottom-color: white;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+      }
+
+    .hero-section{
+      height: 90vh;
+      display: flex; /* Flexbox para centrar contenido */
+      align-items: center; /* Centra verticalmente */
+      justify-content: center; /* Centra horizontalmente */
+      flex-direction: column; /* Coloca el contenido en columna */
+      color: yellow; /* Color de texto */
+      text-align: center; /* Alinea el texto al centro */
+    }
+
+      .home-content {
+      height: 100vh;
+      display: flex; /* Flexbox para centrar contenido */
+      align-items: center; /* Centra verticalmente */
+      justify-content: center; /* Centra horizontalmente */
+      flex-direction: column; /* Coloca el contenido en columna */
+      color: yellow; /* Color de texto */
+      text-align: center; /* Alinea el texto al centro */
+        }
+
+    .round-box{
+      border:0.3em solid #e1e1e0  ;
+      border-radius:2em;
+      background-color: #FFFFFF70;
+      color: black;
+    }
+
+    .content-round-box{
+      margin: 1.5em;
+    }
+
+    .GFG {
+            color: black;
+            font-size: 50px;
+            text-shadow: -1px 1px 0 #c3c3c3,
+                         1px 1px 0 #c3c3c3,
+                         1px -1px 0 #c3c3c3,
+                         -1px -1px 0 #c3c3c3;
+        }
+
+
+  </style>
+</head>
+
+<body>
+
+    <!-- Contenedor para las partículas -->
+    <div id="particles-background"></div>
+
+      <div class="ui tablet computer only padded grid">
+      <div class="ui container" style="padding-top: 2em;">
+        <div class="ui inverted borderless huge menu">
+
+          <a class=" header-navbar" href="{% url 'home:home1' %}" style="background-color: #2f2f2f;">
+
+            <table>
+              <tr>
+                <th>
+                  <div class="niv-navbar">
+                <b>NIV</b>
+                  </div>
+                </th>
+                <th>
+                  <div style="text-align: left; color: white; font-size: 0.9em; padding-right: 0.5em; font-family: 'Times New Roman', Times, serif;">
+                      <div style="margin-bottom: 0em;">
+                        Online    
+                      </div>
+                      <div style="margin-top: 0em; font-family: 'Times New Roman' Times, serif;">
+                        Academy
+                      </div>
+                     
+                  </div>
+                  
+                </th>
+              </tr>
+            </table> </a>
+              
+          <!-- 
+          <a class="item" href="#contacto" style="padding: 0 ; padding-right: 1em; padding-left: 1em;">
+            <p style="font-size: 1.2em; color: white ;">Solicitar Curso</p>
+          </a> 
+           
+          <a class="item">About</a>
+          <a class="item">Contact</a>
+          <a class="ui dropdown item">
+            Dropdown <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item">Action</div>
+              <div class="item">Another action</div>
+              <div class="item">Something else here</div>
+              <div class="ui divider"></div>
+              <div class="header">Navbar header</div>
+              <div class="item">Seperated link</div>
+              <div class="item">One more seperated link</div>
+            </div>
+          </a>
+        
+        
+          <div class="right menu" >
+            <a class=" item" style="padding: 0 ; padding-right: 1em; padding-left: 0.5em;">
+              <p style="font-size: 1.2em; color: white ;"> <i class="circular world icon"> </i> Change Language</p>
+            </a>
+          </div>
+        -->
+      </div>
+    </div>
+    </div>
+<div class="ui mobile only padded grid">
+      <div class="ui top  huge inverted fluid menu" style="background-color:#2f2f2f;">
+          <a class="niv-navbar" href="{% url 'home:home1' %}">
+            <table>
+              <tr>
+                <th>
+                <b>NIV</b>
+                </th>
+                <th>
+                  <div style="text-align: left; color: white; font-size: 0.5em; padding-right: 0.5em;padding-left: 0.3em; font-family: 'Times New Roman', Times, serif;">
+                      <div style="margin-bottom: 0em;">
+                        Online    
+                      </div>
+                      <div style="margin-top: 0em; font-family: 'Times New Roman' Times, serif;">
+                        Academy
+                      </div>
+                     
+                  </div>
+                  
+                </th>
+              </tr>
+            </table>
+          </a>
+
+          <div class="right menu" style="display: none">
+
+<div class="ui simple dropdown item inverted">
+    <i class="content circular icon "></i>
+    <div class="menu">
+    
+      <div class="item" style="background-color: #2f2f2f !important; color: #ffffff;"><a href="#contacto" style="color: #ffffff">Solicitar Curso</a></div> 
+    
+      <div class="item" style="background-color: #2f2f2f !important; color: #ffffff;">
+        <div style="color: #ffffff;"> <i class="world icon"> </i>Change Language</div>
+          
+      </div>
+    </div>
+  </div>
+          </div>
+          
+        
+  </div>
+</div>
+
+<!-- Contenido de la página -->
+
+     <div class="ui ui centered middle aligned four stackable tablet computer only grid container" >   
+
+      <div class="row round-box" style="background-color: #FFFFFF95;margin-top: 3em;">
+            
+        <div class="ui hidden section divider"></div>
+
+        <div class="round-box"  style="padding:1.5em; margin: 3em; background-color: #FFFFFFBB"> <div class="content-round-box">
+          
+            <div style="text-align:center;">
+
+              <p class="GFG" style="font-size: 2.8em; margin-bottom: 0.8em;">
+                ¡Felicitaciones por terminar su prueba de diagnóstico!
+              </p>
+
+              <p style="font-size: 1.6em; margin-bottom: 0.3em;">
+                Su nivel de ingles dentro de la plataforma <b>NIV</b> es:
+              </p>
+
+              <p class="GFG" style="font-size: 2.8em; margin-bottom: 0.6em;">
+                Nivel 3
+              </p>
+
+              <p style="font-size: 1.8em; margin-bottom: 1.3em;">
+                Nivel estimado en <b>CEFR</b>: A2+
+                <br>
+                Nivel estimado en <b>TOEIC</b>: 300-500
+              </p>
+
+              <p style="font-size: 1.6em; margin-bottom: 0.7em;">
+                <b>Resultados por pregunta:</b>
+              </p>
+
+              <div class="ui stackable four column grid" style="font-size: 1.5em">
+                  <div class="column">
+                    <table class="ui celled table" style="text-align:center;">
+                      <tbody>
+                          <tr>
+                            <td style="padding:0.5em">1</td>
+                            <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                          </tr>
+                          <tr>
+                            <td style="padding:0.5em">2</td>
+                            <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <div class="column">
+                    <table class="ui celled table" style="text-align:center;">
+                      <tbody>
+                          <tr>
+                            <td style="padding:0.5em">3</td>
+                            <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                          </tr>
+                          <tr>
+                            <td style="padding:0.5em">4</td>
+                            <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="column">
+                    <table class="ui celled table" style="text-align:center;">
+                      <tbody>
+                          <tr>
+                            <td style="padding:0.5em">5</td>
+                            <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                          </tr>
+                          <tr>
+                            <td style="padding:0.5em">6</td>
+                            <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="column">
+                    <table class="ui celled table" style="text-align:center;">
+                      <tbody>
+                          <tr>
+                            <td style="padding:0.5em">1</td>
+                            <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                          </tr>
+                          <tr>
+                            <td style="padding:0.5em">2</td>
+                            <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+
+
+
+          </div>  
+        </div></div>
+
+        <div class="ui vk inverted massive button " style= "padding: 0.5em; margin-bottom: 1em;"><a href="{% url 'diagnostico:prueba_diagnostico2' %}" style="color:white;">Ingresa aquí para comenzar con tu prueba de diagnóstico</a></div>
+
+      </div>
+     
+      <div class="row">
+        <div class="column" style="color:white;">
+          <div class="ui divider"></div>
+          <footer>&copy; 2024 Nitimur in Vetitum</footer>
+          <footer>Página creada por Juan Fecci</footer>
+        </div>
+      </div>
+    </div>
+
+<div class="ui ui centered middle aligned four stackable mobile only grid container" >   
+      <div class="row round-box" style="background-color: #FFFFFF95; margin: 0.5em; margin-top: 2em;">
+        <p style="font-size: 1.7em; margin-bottom: 1em; margin-top: 1em;">
+              ¿Interesado en saber tu nivel de ingles?
+            </p>
+            
+            <p class="GFG" style="font-size: 2.8em;">
+              Realiza la siguiente prueba de diagnostico para conocer tu nivel
+            </p>
+        <div class="round-box" style="margin:1em; font-size:0.9em" > <div class="content-round-box">
+
+          <div style="text-align:left">
+            <p style="font-size: 1.6em;">
+            Antes de comenzar, lee cuidadosamente las siguientes instrucciones para garantizar que obtengas el mejor resultado posible:
+            <ol type="1" style="font-size: 1.6em;line-height: 1.3em;">
+              <li><b>Acerca de la Prueba:</b>
+
+                <ul style="margin:0.5em;">
+                    <li>Esta prueba consta de 99 preguntas en formato de opción múltiple.</li>
+                    <li> Su objetivo es evaluar tu nivel actual de inglés y determinar el curso más adecuado para ti en nuestra plataforma.</li>
+                </ul>
+              </li>
+              <li> <b>Relación con Certificaciones Internacionales: </b>
+                <ul style="margin:0.5em;">
+                    <li>Los resultados de esta prueba te proporcionarán un estimado de tu nivel según el marco de referencia CEFR (Marco Común Europeo de Referencia para las Lenguas).</li>
+                    <li>También obtendrás un valor aproximado equivalente al puntaje en la prueba TOEIC.</li>
+                </ul>
+              </li>
+              <li><b>Instrucciones Específicas:</b>
+                <ul style="margin:0.5em;">
+                    <li>No te tomes demasiado tiempo en responder cada pregunta. Tu primera impresión suele ser la más acertada.</li>
+                    <li>Selecciona la opción que consideres que mejor completa la oración o que mejor responde a la pregunta planteada.</li>
+                    <li>La prueba está diseñada exclusivamente para fines diagnósticos y no tiene un impacto en tus calificaciones ni certificaciones oficiales.</li>
+                </ul>
+              </li>
+              <li><b>Consejos Finales:</b>
+                <ul style="margin:0.5em;">
+                    <li>Asegúrate de estar en un lugar tranquilo y con una conexión estable a internet antes de comenzar.</li>
+                    <li>Tómate tu tiempo para leer cada pregunta con atención, pero recuerda que no es necesario detenerse demasiado en ninguna de ellas.</li>
+                </ul>
+
+              </li>
+            </ol>
+            
+            
+          </p>
+          </div>
+          <br>
+          <b style="font-size:2em; text-align: center;">¡Buena suerte!</b>
+
+            
+        </div></div>
+
+        <div class="ui vk inverted massive button" style= "padding: 0.5em; margin: .8em; margin-bottom: 1em;"><a href="#contacto" style="color:white;">Ingresa aquí para comenzar con tu prueba de diagnóstico</a></div>
+
+      </div>
+     <div class="ui hidden section divider"></div>
+      <div class="ui footer" style="color:white; margin: 1em;">
+            <div class="ui hidden section divider"></div>
+            <div class="ui divider"></div>
+            <footer>&copy; 2024 Nitimur in Vetitum</footer>
+            <footer>Página creada por Juan Fecci</footer>
+        </div>
+    </div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $(".ui.toggle.button").click(function() {
+        $(".mobile.only.grid .ui.vertical.menu").toggle(100);
+      });
+
+      $(".ui.dropdown").dropdown();
+    });
+  </script>
+
+    <!-- Librería tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.4/tsparticles.bundle.min.js"></script>
+
+      <!-- Configuración de las partículas -->
+    <script>
+    window.onload = function() {
+        tsParticles.load("particles-background", {
+            fpsLimit: 60,
+            background: {
+                color: 'transparent',
+            },
+            particles: {
+                number: {
+                    value: 12,
+                    density: {
+                        enable: true,
+                        value_area: 800,
+                    },
+                },
+                shape: {
+                    type: ["circle", "square", "triangle", "polygon"],
+                    polygon: {
+                        sides: 6,
+                    },
+                },
+                stroke: {
+                    width: 5, // Ancho del borde de las figuras
+                    color: ["#dcd92f"] // Color del borde de las figuras
+                },
+
+                color: {
+                    value: "#ffffff"
+                },
+
+                opacity: {
+                    value: 0.4,
+                    random: true,
+                },
+                size: {
+                    value: 45,
+                    random: { enable: true, minimumValue: 10 },
+                },
+                move: {
+                    enable: true, // Habilita el movimiento
+                    direction: "top", // Dirección hacia arriba
+                    outModes: {
+                        default: "out", // Las partículas salen y no vuelven a aparecer desde abajo
+                    },
+                    speed: 0.5, // Velocidad de movimiento
+                    straight: false, // Si se desea movimiento recto (false permite un movimiento más fluido)
+                },
+            },
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: false,
+                    },
+                    onClick: {
+                        enable: false,
+                    },
+                },
+            },
+            detectRetina: true,
+        });
+    };
+</script>
+
+</body>
+</html>
