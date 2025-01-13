@@ -285,22 +285,38 @@
 
                 <div style="text-align:left">
                   <p style="font-size: 1.6em;">
-                  {{question.id}}. {{ question.text }}
-                  <input type="hidden" name="questions_ids" value="{{ question.id }}">
+                  {{question.1}}. {{ question.0.text }}
+                  <input type="hidden" name="questions_ids" value="{{ question.0.id }}">
                   <br>
                   <div style="font-size: 1.6em; line-height:1">
 
-                    <input type="radio" name="selected_options_{{ question.id }}" value="1" /> {{ question.option_1 }}
-                    <br>
+                    {% if question.0.option_1 != "!NONE" %}
 
-                    <input type="radio" name="selected_options_{{ question.id }}" value="2" /> {{ question.option_2 }}
-                    <br>
+                      <input type="radio" name="selected_options_{{ question.0.id }}" value="1" /> {{ question.0.option_1 }}
+                      <br>
 
-                    <input type="radio" name="selected_options_{{ question.id }}" value="3" /> {{ question.option_3 }}
-                    <br>
+                    {% endif %}
 
-                    <input type="radio" name="selected_options_{{ question.id }}" value="4" /> {{ question.option_4 }}
-                    <br>
+                    {% if question.0.option_2 != "!NONE" %}
+
+                      <input type="radio" name="selected_options_{{ question.0.id }}" value="2" /> {{ question.0.option_2 }}
+                      <br>
+
+                    {% endif %}
+
+                    {% if question.0.option_3 != "!NONE" %}
+
+                      <input type="radio" name="selected_options_{{ question.0.id }}" value="3" /> {{ question.0.option_3 }}
+                      <br>
+
+                    {% endif %}
+
+                    {% if question.0.option_4 != "!NONE" %}
+
+                      <input type="radio" name="selected_options_{{ question.0.id }}" value="4" /> {{ question.0.option_4 }}
+                      <br>
+
+                    {% endif %}
 
                     </div>
                     

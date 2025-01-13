@@ -22,10 +22,16 @@ def prueba_diagnostico2(request):
             question = Question.objects.get(id=question_id)
             selected_option = request.POST.getlist('selected_options_' + question_id)
 
-            is_correct = int(selected_option[0]) == int(question.correct_option)
-            print(int(selected_option[0]))
-            print(question.correct_option)
-            print(is_correct)
+            try:
+                selected_option[0]
+            except IndexError:
+                is_correct = False
+            else:
+                is_correct = int(selected_option[0]) == int(question.correct_option)
+            
+            #print(int(selected_option[0]))
+            #print(question.correct_option)
+            #print(is_correct)
 
             request.session['answers'].append({
                 'question_id': question_id,
@@ -48,6 +54,7 @@ def prueba_diagnostico2(request):
     print(questions_done)
     remaining_questions = Question.objects.exclude(id__in=questions_done)
     actual_page = request.session['page'] + 1
+    request.session['page'] = actual_page
 
     if not remaining_questions.exists():
         answers = request.session.get('answers', [])
@@ -57,8 +64,14 @@ def prueba_diagnostico2(request):
         return render(request, 'resultados.html', {'answers': answers})
 
     questions = list(remaining_questions)[:10]
+    final_questions = []
+    n_pagina = (actual_page - 1) * 10
+    n_pregunta = 1
+    for q in questions:
+        final_questions.append([q, n_pregunta + n_pagina])
+        n_pregunta += 1
 
     print("Terminando")
-    return render(request, 'diagnostico2.html', {'questions': questions, 'actual_page': actual_page})
+    return render(request, 'diagnostico2.html', {'questions': final_questions, 'actual_page': actual_page})
 
     
