@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Question
+import random
 
 def prueba_diagnostico(request):
 	return render(request, 'diagnostico1.html')
@@ -29,9 +30,9 @@ def prueba_diagnostico2(request):
             else:
                 is_correct = int(selected_option[0]) == int(question.correct_option)
             
-            #print(int(selected_option[0]))
-            #print(question.correct_option)
-            #print(is_correct)
+            print(int(selected_option[0]))
+            print(question.correct_option)
+            print(is_correct)
 
             request.session['answers'].append({
                 'question_id': question_id,
@@ -63,7 +64,11 @@ def prueba_diagnostico2(request):
 
         return render(request, 'resultados.html', {'answers': answers})
 
-    questions = list(remaining_questions)[:10]
+    list_questions = list(remaining_questions)
+    if len(list_questions) >= 10:
+        questions = random.sample(list_questions, 10)
+    else:
+        questions = random.sample(list_questions, len(list_questions))
     final_questions = []
     n_pagina = (actual_page - 1) * 10
     n_pregunta = 1
