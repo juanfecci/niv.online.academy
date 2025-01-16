@@ -304,17 +304,100 @@
                 Nivel {{nivel}}
               </p>
 
-              <p style="font-size: 1.8em; margin-bottom: 1em;">
+              <p style="font-size: 1.8em; margin-bottom: 1.3em;">
                 Nivel estimado en <b>CEFR</b>: {{nivel_CEFR}}
                 <br>
                 Nivel estimado en <b>TOEIC</b>: {{nivel_TOEIC}}
               </p>
 
+              <p style="font-size: 1.6em; margin-bottom: 0.7em;">
+                <b>Resultados por pregunta:</b>
+              </p>
+
+              <div class="ui stackable four column grid" style="font-size: 1.5em">
+                  <div class="column">
+                    <table class="ui celled table" style="text-align:center;">
+                      <tbody>
+
+                        {% for answer in answers1 %}
+                          <tr>
+                            <td style="padding:0.5em">{{ answer.number_test }}</td>
+                            {% if answer.is_correct %}
+                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                            {% else %}
+                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                            {% endif %}
+                          </tr>
+
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="column">
+                    <table class="ui celled table" style="text-align:center;">
+                      <tbody>
+
+                        {% for answer in answers2 %}
+                          <tr>
+                            <td style="padding:0.5em">{{ answer.number_test }}</td>
+                            {% if answer.is_correct %}
+                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                            {% else %}
+                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                            {% endif %}
+                          </tr>
+
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="column">
+                    <table class="ui celled table" style="text-align:center;">
+                      <tbody>
+
+                        {% for answer in answers3 %}
+                          <tr>
+                            <td style="padding:0.5em">{{ answer.number_test }}</td>
+                            {% if answer.is_correct %}
+                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                            {% else %}
+                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                            {% endif %}
+                          </tr>
+
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <div class="column">
+                    <table class="ui celled table" style="text-align:center;">
+                      <tbody>
+
+                        {% for answer in answers4 %}
+                          <tr>
+                            <td style="padding:0.5em">{{ answer.number_test }}</td>
+                            {% if answer.is_correct %}
+                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                            {% else %}
+                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                            {% endif %}
+                          </tr>
+
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                </div>
+
           </div>  
         </div></div>
 
 
-      <div class="round-box"  style="padding:1.5em; padding-bottom: 0.6em; margin: 3em; margin-top: 0; background-color: #FFFFFFBB"> <div class="content-round-box" style="margin:0.3em">
+      <div class="round-box"  style="padding:1.5em; margin: 3em; margin-top: 0; background-color: #FFFFFFBB"> <div class="content-round-box" style="margin:0.3em">
 
         <p style="font-size: 1.8em; margin-bottom: 0.5em;">
           Si quieres seguir avanzando en tu nivel de ingles, te recomendamos realizar el curso de ingles de <b>nivel {{nivel}} </b>. Puedes solicitar un curso contactándonos por los siguientes medios

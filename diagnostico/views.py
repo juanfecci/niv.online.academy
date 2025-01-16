@@ -10,6 +10,7 @@ def prueba_diagnostico2(request):
 
     #Sección si ya esta activa la prueba:
     if request.method == 'POST':
+        number_test = (request.session['page'] - 1) * 10 + 1
         questions_ids = request.POST.getlist('questions_ids')
 
         for question_id in questions_ids:
@@ -25,10 +26,12 @@ def prueba_diagnostico2(request):
 
             request.session['answers'].append({
                 'question_id': question_id,
+                'number_test': number_test,
                 'selected_option': selected_option,
                 'is_correct': is_correct
             })
             request.session['questions_done'].append(int(question_id))
+            number_test += 1
 
         request.session.modified = True
 
@@ -49,7 +52,7 @@ def prueba_diagnostico2(request):
         answers = request.session.get('answers', [])
 
         cefr = {0:"pre-A1", 1:"A1/A1+", 2:"A2", 3:"A2+", 4:"B1", 5:"B1/B1+", 6:"B1+" ,7:"B2/C1" }
-        toeic = {0:"0", 1:"60 - 180", 2:"200 - 300", 3:"300 - 500", 4:"505 - 600", 5:"605 - 700", 6:"705 - 750", 7:"750+"}
+        toeic = {0:"60", 1:"60 - 180", 2:"200 - 300", 3:"300 - 500", 4:"505 - 600", 5:"605 - 700", 6:"705 - 750", 7:"750+"}
 
         '''
         #Verdaderas respuestas
@@ -78,7 +81,7 @@ def prueba_diagnostico2(request):
             resultados[int(answer["question_id"])] = bool(answer["is_correct"])
 
         nivel_actual = 1
-        for i in range(1,7):
+        for i in range(1,5): #cambiar a 7 en producción
             flag_nivel = True
 
             for q_id in preguntas_nivel[i]:
@@ -98,7 +101,15 @@ def prueba_diagnostico2(request):
         # Aquí puedes procesar las respuestas y calcular los resultados
         # Por ejemplo, verificar respuestas correctas o calcular puntajes
 
-        return render(request, 'resultados.html', {'answers': answers, 'nivel': nivel_actual})
+        #Cambiar numeros en producción
+        return render(request, 'diagnostico3.1.html', {
+                'answers1': answers[:7],
+                'answers2': answers[7:14],
+                'answers3': answers[14:21], 
+                'answers4': answers[21:26],
+                'nivel': nivel_actual, 
+                'nivel_CEFR': cefr[nivel_actual-1],
+                'nivel_TOEIC': toeic[nivel_actual-1]})
 
     list_questions = list(remaining_questions)
     if len(list_questions) >= 10:
@@ -111,6 +122,7 @@ def prueba_diagnostico2(request):
     n_pagina = (actual_page - 1) * 10
     n_pregunta = 1
     for q in questions:
+        print(q.correct_option)
         final_questions.append([q, n_pregunta + n_pagina])
         n_pregunta += 1
 
