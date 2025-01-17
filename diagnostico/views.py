@@ -10,28 +10,32 @@ def prueba_diagnostico2(request):
 
     #Sección si ya esta activa la prueba:
     if request.method == 'POST':
+        questions_done2 = request.session['questions_done']
         number_test = (request.session['page'] - 1) * 10 + 1
         questions_ids = request.POST.getlist('questions_ids')
 
         for question_id in questions_ids:
-            question = Question.objects.get(id=question_id)
-            selected_option = request.POST.getlist('selected_options_' + question_id)
+            if int(question_id) not in questions_done2:
+                question = Question.objects.get(id=question_id)
+                selected_option = request.POST.getlist('selected_options_' + question_id)
 
-            try:
-                selected_option[0]
-            except IndexError:
-                is_correct = False
+                try:
+                    selected_option[0]
+                except IndexError:
+                    is_correct = False
+                else:
+                    is_correct = int(selected_option[0]) == int(question.correct_option)
+
+                request.session['answers'].append({
+                    'question_id': question_id,
+                    'number_test': number_test,
+                    'selected_option': selected_option,
+                    'is_correct': is_correct
+                })
+                request.session['questions_done'].append(int(question_id))
+                number_test += 1
             else:
-                is_correct = int(selected_option[0]) == int(question.correct_option)
-
-            request.session['answers'].append({
-                'question_id': question_id,
-                'number_test': number_test,
-                'selected_option': selected_option,
-                'is_correct': is_correct
-            })
-            request.session['questions_done'].append(int(question_id))
-            number_test += 1
+                print("No entre")
 
         request.session.modified = True
 

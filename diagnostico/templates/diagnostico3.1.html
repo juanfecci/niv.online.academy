@@ -310,12 +310,11 @@
                 Nivel estimado en <b>TOEIC</b>: {{nivel_TOEIC}}
               </p>
 
-              <p style="font-size: 1.6em; margin-bottom: 0.7em;">
-                <b>Resultados por pregunta:</b>
-              </p>
+              <button onclick="toggleContenido()" id="boton_respuestas" class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;">Mostrar resultados por pregunta</button>
 
-              <div class="ui stackable four column grid" style="font-size: 1.5em">
-                  <div class="column">
+
+              <div id="tabla_respuestas" class="ui stackable grid" style="font-size: 1.5em; display: none;">
+                  <div class="three wide column">
                     <table class="ui celled table" style="text-align:center;">
                       <tbody>
 
@@ -334,7 +333,7 @@
                     </table>
                   </div>
 
-                  <div class="column">
+                  <div class="three wide column">
                     <table class="ui celled table" style="text-align:center;">
                       <tbody>
 
@@ -353,7 +352,7 @@
                     </table>
                   </div>
 
-                  <div class="column">
+                  <div class="three wide column">
                     <table class="ui celled table" style="text-align:center;">
                       <tbody>
 
@@ -372,7 +371,7 @@
                     </table>
                   </div>
                   
-                  <div class="column">
+                  <div class="three wide column">
                     <table class="ui celled table" style="text-align:center;">
                       <tbody>
 
@@ -518,6 +517,24 @@
       $(".ui.dropdown").dropdown();
     });
   </script>
+
+  <!-- Boton de respuestas -->
+
+  <script>
+    function toggleContenido() {
+        const contenido = document.getElementById('tabla_respuestas');
+        const boton = document.getElementById('boton_respuestas');
+
+        if (contenido.style.display === 'none' || contenido.style.display === '') {
+            contenido.style.display = 'block';
+            boton.textContent = 'Ocultar resultados por pregunta';
+        } else {
+            contenido.style.display = 'none';
+            boton.textContent = 'Mostrar resultados por pregunta';
+        }
+        boton.blur();
+    }
+    </script>
 
     <!-- Librería tsParticles -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.4/tsparticles.bundle.min.js"></script>
