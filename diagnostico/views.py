@@ -10,11 +10,13 @@ def prueba_diagnostico2(request):
 
     #Sección si ya esta activa la prueba:
     if request.method == 'POST':
+        print("Entre al POST")
         questions_done2 = request.session['questions_done']
         number_test = (request.session['page'] - 1) * 10 + 1
         questions_ids = request.POST.getlist('questions_ids')
-
+        print(questions_ids)
         for question_id in questions_ids:
+            print(question_id)
             if int(question_id) not in questions_done2:
                 question = Question.objects.get(id=question_id)
                 selected_option = request.POST.getlist('selected_options_' + question_id)
@@ -34,6 +36,7 @@ def prueba_diagnostico2(request):
                 })
                 request.session['questions_done'].append(int(question_id))
                 number_test += 1
+                print(request.session['questions_done'])
             else:
                 print("No entre")
 
@@ -117,11 +120,11 @@ def prueba_diagnostico2(request):
 
     list_questions = list(remaining_questions)
     if len(list_questions) >= 10:
-        #questions = random.sample(list_questions, 10)
-        questions = list_questions[:10]
+        questions = random.sample(list_questions, 10)
+        #questions = list_questions[:10]
     else:
-        #questions = random.sample(list_questions, len(list_questions))
-        questions = list_questions[:10]
+        questions = random.sample(list_questions, len(list_questions))
+        #questions = list_questions[:10]
     final_questions = []
     n_pagina = (actual_page - 1) * 10
     n_pregunta = 1

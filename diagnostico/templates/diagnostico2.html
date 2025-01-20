@@ -275,7 +275,6 @@
 
         <p class="GFG" style="font-size: 2.8em; margin-top: 0.5em; margin-bottom: 0;">
               Prueba de Diagnóstico - Página {{actual_page}} de 10
-              <!-- Cambiar página -->
             </p>
 
         <form method="post" action="{% url 'diagnostico:prueba_diagnostico2' %}" style="width:100%">
@@ -417,68 +416,71 @@
 <div class="row round-box" width="100%" style="background-color: #FFFFFFc0;margin-top: 2em; margin-right: 0.5em; margin-left: 0.5em;">
 
         <p class="GFG" style="font-size: 2.8em; margin-top: 0.5em; margin-bottom: 0;">
-              Prueba de Diagnóstico - Página 1 de 10
+              Prueba de Diagnóstico - Página {{actual_page}} de 10
             </p>
 
 
         
-        <form method="post" action="" style="width:100%">
+        <form method="post" action="{% url 'diagnostico:prueba_diagnostico2' %}" style="width:100%">
+          {% csrf_token %}
+          {% for question in questions %}
 
             <div class="round-box" style=" margin: 1em;"> <div class="content-round-box">
 
                 <div style="text-align:left">
                   <p style="font-size: 1.6em;">
-                  1. He's _____ doctor of law
+                  {{question.1}}. {{ question.0.text }}
+                  <input type="hidden" name="questions_ids" value="{{ question.0.id }}">
                   <br>
                   <div style="font-size: 1.6em; line-height:1">
-                    <input type="radio" name="pregunta1" value="1A"/> an
-                    <br>
-                    <input type="radio" name="pregunta1" value="1B"/> the
-                    <br>
-                    <input type="radio" name="pregunta1" value="1C"/> a
-                    <br>
-                    <input type="radio" name="pregunta1" value="1D"/> one
+                    {% if question.0.option_1 != "!NONE" %}
+
+                      <input type="radio" name="selected_options_{{ question.0.id }}" value="1" /> {{ question.0.option_1 }}
+                      <br>
+
+                    {% endif %}
+
+                    {% if question.0.option_2 != "!NONE" %}
+
+                      <input type="radio" name="selected_options_{{ question.0.id }}" value="2" /> {{ question.0.option_2 }}
+                      <br>
+
+                    {% endif %}
+
+                    {% if question.0.option_3 != "!NONE" %}
+
+                      <input type="radio" name="selected_options_{{ question.0.id }}" value="3" /> {{ question.0.option_3 }}
+                      <br>
+
+                    {% endif %}
+
+                    {% if question.0.option_4 != "!NONE" %}
+
+                      <input type="radio" name="selected_options_{{ question.0.id }}" value="4" /> {{ question.0.option_4 }}
+                      <br>
+
+                    {% endif %}
 
                     </div>
                     
-                    </p>            
+                    </p>              
 
                 </div>
                 
             </div></div>
+            {% endfor %}
 
-            <div class="round-box"  style="margin: 1em;"> <div class="content-round-box">
-
-                <div style="text-align:left">
-                  <p style="font-size: 1.6em;">
-                  2. _____ she like chocolates?
-                  <br>
-                  <div style="font-size: 1.6em; line-height:1">
-                    <input type="radio" name="pregunta2" value="2A"/> Does
-                    <br>
-                    <input type="radio" name="pregunta2" value="2B"/> Has
-                    <br>
-                    <input type="radio" name="pregunta2" value="2C"/> Is
-                    <br>
-                    <input type="radio" name="pregunta2" value="2D"/> Do
-
-                    </div>
-                    
-                    </p>            
-
-                </div>
-                
-            </div></div>
-
-        <div class="ui centered grid">
-            <div class="row two column ">
+        <div class="ui grid">
+            <div class="row one column ">
+              <!--
                 <div class="column">
                             <div class="ui google plus  inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;"><a href="#contacto" style="color:white;">
                     Volver a la página anterior</a></div>
                 </div>
+              -->
                 <div class="column">
-                            <div class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;"><a href="#contacto" style="color:white;">
-                    Siguiente página</a></div>
+                  <button type="submit" class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;">Siguiente página</button>
+                            
                 </div>
             </div>
         </div>

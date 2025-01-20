@@ -428,75 +428,140 @@
     </div>
 
 <div class="ui ui centered middle aligned four stackable mobile only grid container" >   
-      <div class="row round-box" style="background-color: #FFFFFF95; margin: 0.5em; margin-top: 2em;">
-        <p style="font-size: 1.7em; margin-bottom: 1em; margin-top: 1em;">
-              ¿Interesado en saber tu nivel de ingles?
-            </p>
-            
-            <p class="GFG" style="font-size: 2.8em;">
-              Realiza la siguiente prueba de diagnostico para conocer tu nivel
-            </p>
-        <div class="round-box" style="margin:1em; font-size:0.9em" > <div class="content-round-box">
+      <div class="row round-box" style="background-color: #FFFFFF95; margin: 0.5em; margin-top: 0.5em;">
 
-          <div style="text-align:left">
-            <p style="font-size: 1.6em;">
-            Antes de comenzar, lee cuidadosamente las siguientes instrucciones para garantizar que obtengas el mejor resultado posible:
-            <ol type="1" style="font-size: 1.6em;line-height: 1.3em;">
-              <li><b>Acerca de la Prueba:</b>
 
-                <ul style="margin:0.5em;">
-                    <li>Esta prueba consta de 99 preguntas en formato de opción múltiple.</li>
-                    <li> Su objetivo es evaluar tu nivel actual de inglés y determinar el curso más adecuado para ti en nuestra plataforma.</li>
-                </ul>
-              </li>
-              <li> <b>Relación con Certificaciones Internacionales: </b>
-                <ul style="margin:0.5em;">
-                    <li>Los resultados de esta prueba te proporcionarán un estimado de tu nivel según el marco de referencia CEFR (Marco Común Europeo de Referencia para las Lenguas).</li>
-                    <li>También obtendrás un valor aproximado equivalente al puntaje en la prueba TOEIC.</li>
-                </ul>
-              </li>
-              <li><b>Instrucciones Específicas:</b>
-                <ul style="margin:0.5em;">
-                    <li>No te tomes demasiado tiempo en responder cada pregunta. Tu primera impresión suele ser la más acertada.</li>
-                    <li>Selecciona la opción que consideres que mejor completa la oración o que mejor responde a la pregunta planteada.</li>
-                    <li>La prueba está diseñada exclusivamente para fines diagnósticos y no tiene un impacto en tus calificaciones ni certificaciones oficiales.</li>
-                </ul>
-              </li>
-              <li><b>Consejos Finales:</b>
-                <ul style="margin:0.5em;">
-                    <li>Asegúrate de estar en un lugar tranquilo y con una conexión estable a internet antes de comenzar.</li>
-                    <li>Tómate tu tiempo para leer cada pregunta con atención, pero recuerda que no es necesario detenerse demasiado en ninguna de ellas.</li>
-                </ul>
 
-              </li>
-            </ol>
-            
-            
-          </p>
-          </div>
-          <br>
-          <b style="font-size:2em; text-align: center;">¡Buena suerte!</b>
+        <div class="round-box"  style="padding:1.5em; margin: 1em; background-color: #FFFFFFBB"> <div class="content-round-box">
+          
+            <div style="text-align:center;">
 
-            
+              <p class="GFG2" style="font-size: 2.8em; margin-bottom: 0.8em;">
+                ¡Felicitaciones por terminar su prueba de diagnóstico!
+              </p>
+
+              <p style="font-size: 1.6em; margin-bottom: 0.3em;">
+                Su nivel de ingles dentro de la plataforma <b>NIV</b> es:
+              </p>
+
+              <p class="GFG2" style="font-size: 2.8em; margin-bottom: 0.6em;">
+                Nivel {{nivel}}
+              </p>
+
+              <p style="font-size: 1.8em; margin-bottom: 1.3em;">
+                Nivel estimado en <br><b>CEFR</b>: {{nivel_CEFR}}
+                <br> <br>
+                Nivel estimado en <b>TOEIC</b>: {{nivel_TOEIC}}
+              </p>
+
+              <button onclick="toggleContenido2()" id="boton_respuestas2" class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;">Mostrar resultados por pregunta</button>
+
+
+              <div id="tabla_respuestas2" class="ui grid" style="font-size: 1.5em; display: none;">
+                  <div class="three wide column">
+                    <table class="ui unstackable celled table" style="text-align:center;">
+                      <tbody>
+
+                        {% for answer in answers1 %}
+                          <tr>
+                            <td style="padding:0.5em">{{ answer.number_test }}</td>
+                            {% if answer.is_correct %}
+                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                            {% else %}
+                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                            {% endif %}
+                          </tr>
+
+                        {% endfor %}
+
+                        {% for answer in answers2 %}
+                          <tr>
+                            <td style="padding:0.5em">{{ answer.number_test }}</td>
+                            {% if answer.is_correct %}
+                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                            {% else %}
+                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                            {% endif %}
+                          </tr>
+
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="two wide column"> </div>
+
+                  <div class="three wide column">
+                    <table class="ui unstackable celled table" style="text-align:center;">
+                      <tbody>
+
+                        {% for answer in answers3 %}
+                          <tr>
+                            <td style="padding:0.5em">{{ answer.number_test }}</td>
+                            {% if answer.is_correct %}
+                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                            {% else %}
+                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                            {% endif %}
+                          </tr>
+
+                        {% endfor %}
+
+                        {% for answer in answers4 %}
+                          <tr>
+                            <td style="padding:0.5em">{{ answer.number_test }}</td>
+                            {% if answer.is_correct %}
+                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
+                            {% else %}
+                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
+                            {% endif %}
+                          </tr>
+
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                </div>
+
+          </div>  
         </div></div>
 
-        <div class="ui vk inverted massive button" style= "padding: 0.5em; margin: .8em; margin-bottom: 1em;"><a href="#contacto" style="color:white;">Ingresa aquí para comenzar con tu prueba de diagnóstico</a></div>
 
-      </div>
-     <div class="ui hidden section divider"></div>
-      <div class="ui footer" style="color:white; margin: 1em;">
-            <div class="ui hidden section divider"></div>
-            <div class="ui divider"></div>
-            <footer>&copy; 2024 Nitimur in Vetitum</footer>
-            <footer>Página creada por Juan Fecci</footer>
+      <div class="round-box"  style="padding:1.5em; margin: 3em; margin-top: 0; background-color: #FFFFFFBB"> <div class="content-round-box" style="margin:0.3em">
+
+        <p style="font-size: 1.8em; margin-bottom: 0.5em;">
+          Si quieres seguir avanzando en tu nivel de ingles, te recomendamos realizar el curso de ingles de <b>nivel {{nivel}} </b>. Puedes solicitar un curso contactándonos por los siguientes medios
+        </p>
+        
+        <div class="ui grid" style="margin: 0.4em;">
+          <div class="row" style="flex: 1; width: 50vh;">
+            <div class="column">
+                <div class="round-box GFG2" style="padding: 0.2em; font-size: 2em;"> 
+                  <a href="https://wa.me/56987089931" style="color: #009725;"><i class="circular whatsapp icon" style="font-size:1em;"> </i>+56 9 8708 9931</a>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="flex: 1; width: 50vh;">
+            <div class="column">
+              <div class="round-box GFG2" style="padding: 0.2em; font-size: 2em;">
+                <a href="mailto:n.i.v_12@hotmail.com" style="color: #0046a4 ;">
+                  <i class="circular envelope outline icon" style="font-size:1em;"> </i> n.i.v_12@hotmail.com</a>
+                </div>
+            </div>
+          </div>
         </div>
-    </div>
+        
+      </div></div>
+        
+
+      </div> </div>
 
 <!-- Footer -->
 
 
           <div class="ui footer" style="color:white; margin: 3em; padding-bottom: 1em;">
-                  <div class="ui hidden section divider"></div>
+                  
                   <div class="ui divider"></div>
                   <footer>&copy; 2024 Nitimur in Vetitum</footer>
                   <footer>Página creada por Juan Fecci</footer>
@@ -524,6 +589,20 @@
     function toggleContenido() {
         const contenido = document.getElementById('tabla_respuestas');
         const boton = document.getElementById('boton_respuestas');
+
+        if (contenido.style.display === 'none' || contenido.style.display === '') {
+            contenido.style.display = 'block';
+            boton.textContent = 'Ocultar resultados por pregunta';
+        } else {
+            contenido.style.display = 'none';
+            boton.textContent = 'Mostrar resultados por pregunta';
+        }
+        boton.blur();
+    }
+
+    function toggleContenido2() {
+        const contenido = document.getElementById('tabla_respuestas2');
+        const boton = document.getElementById('boton_respuestas2');
 
         if (contenido.style.display === 'none' || contenido.style.display === '') {
             contenido.style.display = 'block';
