@@ -453,76 +453,116 @@
                 <br> <br>
                 Nivel estimado en <b>TOEIC</b>: {{nivel_TOEIC}}
               </p>
+              <div style="text-align:center;">
+                <button onclick="toggleContenido2()" id="boton_respuestas2" class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;">Mostrar resultados por pregunta</button>
 
-              <button onclick="toggleContenido2()" id="boton_respuestas2" class="ui vk inverted massive button" style= "padding: 0.5em; margin-bottom: 1em;">Mostrar resultados por pregunta</button>
 
+                <div id="tabla_respuestas2" class="ui grid" style="font-size: 1.3em; display: none;">
 
-              <div id="tabla_respuestas2" class="ui grid" style="font-size: 1.5em; display: none;">
-                  <div class="three wide column">
-                    <table class="ui unstackable celled table" style="text-align:center;">
-                      <tbody>
+                    <div class="two wide column">
+                      <table class="ui unstackable celled table" style="text-align:center;">
+                        <tbody>
 
-                        {% for answer in answers1 %}
-                          <tr>
-                            <td style="padding:0.5em">{{ answer.number_test }}</td>
-                            {% if answer.is_correct %}
-                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
-                            {% else %}
-                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
-                            {% endif %}
-                          </tr>
+                          {% for answer in answers1 %}
+                            <tr>
+                              <td style="padding:0.4em">{{ answer.number_test }}</td>
+                              {% if answer.is_correct %}
+                                  <td style="padding:0.4em" class="positive"><i class="icon checkmark"></i></td>
+                              {% else %}
+                                  <td style="padding:0.4em" class="negative"><i class="icon close"></i></td>
+                              {% endif %}
+                            </tr>
 
-                        {% endfor %}
+                          {% endfor %}
 
-                        {% for answer in answers2 %}
-                          <tr>
-                            <td style="padding:0.5em">{{ answer.number_test }}</td>
-                            {% if answer.is_correct %}
-                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
-                            {% else %}
-                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
-                            {% endif %}
-                          </tr>
+                          {% for answer in answers2 %}
+                            <tr>
+                              <td style="padding:0.4em">{{ answer.number_test }}</td>
+                              {% if answer.is_correct %}
+                                  <td style="padding:0.4em" class="positive"><i class="icon checkmark"></i></td>
+                              {% else %}
+                                  <td style="padding:0.4em" class="negative"><i class="icon close"></i></td>
+                              {% endif %}
+                            </tr>
 
-                        {% endfor %}
-                      </tbody>
-                    </table>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="two wide column"> </div>
+
+                    <div class="two wide column">
+                      <table class="ui unstackable celled table" style="text-align:center;">
+                        <tbody>
+
+                          {% for answer in answers3 %}
+                            <tr>
+                              <td style="padding:0.4em">{{ answer.number_test }}</td>
+                              {% if answer.is_correct %}
+                                  <td style="padding:0.4em" class="positive"><i class="icon checkmark"></i></td>
+                              {% else %}
+                                  <td style="padding:0.4em" class="negative"><i class="icon close"></i></td>
+                              {% endif %}
+                            </tr>
+
+                          {% endfor %}
+
+                          {% for answer in answers4 %}
+                            <tr>
+                              <td style="padding:0.4em">{{ answer.number_test }}</td>
+                              {% if answer.is_correct %}
+                                  <td style="padding:0.4em" class="positive"><i class="icon checkmark"></i></td>
+                              {% else %}
+                                  <td style="padding:0.4em" class="negative"><i class="icon close"></i></td>
+                              {% endif %}
+                            </tr>
+
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="two wide column"> </div>
+
+                    <div class="two wide column">
+                      <table class="ui unstackable celled table" style="text-align:center;">
+                        <tbody>
+
+                          {% for answer in answers3 %}
+                            <tr>
+                              <td style="padding:0.4em">{{ answer.number_test }}</td>
+                              {% if answer.is_correct %}
+                                  <td style="padding:0.4em" class="positive"><i class="icon checkmark"></i></td>
+                              {% else %}
+                                  <td style="padding:0.4em" class="negative"><i class="icon close"></i></td>
+                              {% endif %}
+                            </tr>
+
+                          {% endfor %}
+
+                          {% for answer in answers4 %}
+                            <tr>
+                              <td style="padding:0.4em">{{ answer.number_test }}</td>
+                              {% if answer.is_correct %}
+                                  <td style="padding:0.4em" class="positive"><i class="icon checkmark"></i></td>
+                              {% else %}
+                                  <td style="padding:0.4em" class="negative"><i class="icon close"></i></td>
+                              {% endif %}
+                            </tr>
+
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="three wide column"> </div>
+                    
                   </div>
 
-                  <div class="two wide column"> </div>
+              </div>
 
-                  <div class="three wide column">
-                    <table class="ui unstackable celled table" style="text-align:center;">
-                      <tbody>
-
-                        {% for answer in answers3 %}
-                          <tr>
-                            <td style="padding:0.5em">{{ answer.number_test }}</td>
-                            {% if answer.is_correct %}
-                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
-                            {% else %}
-                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
-                            {% endif %}
-                          </tr>
-
-                        {% endfor %}
-
-                        {% for answer in answers4 %}
-                          <tr>
-                            <td style="padding:0.5em">{{ answer.number_test }}</td>
-                            {% if answer.is_correct %}
-                                <td style="padding:0.5em" class="positive"><i class="icon checkmark"></i></td>
-                            {% else %}
-                                <td style="padding:0.5em" class="negative"><i class="icon close"></i></td>
-                            {% endif %}
-                          </tr>
-
-                        {% endfor %}
-                      </tbody>
-                    </table>
-                  </div>
-                  
-                </div>
+              
 
           </div>  
         </div></div>
@@ -537,16 +577,16 @@
         <div class="ui grid" style="margin: 0.4em;">
           <div class="row" style="flex: 1; width: 50vh;">
             <div class="column">
-                <div class="round-box GFG2" style="padding: 0.2em; font-size: 2em;"> 
-                  <a href="https://wa.me/56987089931" style="color: #009725;"><i class="circular whatsapp icon" style="font-size:1em;"> </i>+56 9 8708 9931</a>
+                <div class="round-box GFG2" style="padding: 0.2em; font-size: 1.5em; border-radius:1em;"> 
+                  <a href="https://wa.me/56987089931" style="color: #009725;"><i class="circular whatsapp icon" style="font-size:1em;"> </i> <br>+56 9 8708 9931</a>
               </div>
             </div>
           </div>
           <div class="row" style="flex: 1; width: 50vh;">
             <div class="column">
-              <div class="round-box GFG2" style="padding: 0.2em; font-size: 2em;">
+              <div class="round-box GFG2" style="padding: 0.2em; font-size: 1.5em; border-radius:1em;">
                 <a href="mailto:n.i.v_12@hotmail.com" style="color: #0046a4 ;">
-                  <i class="circular envelope outline icon" style="font-size:1em;"> </i> n.i.v_12@hotmail.com</a>
+                  <i class="circular envelope outline icon" style="font-size:1em;"> </i> <br> n.i.v_12@hotmail.com</a>
                 </div>
             </div>
           </div>
@@ -561,7 +601,6 @@
 
 
           <div class="ui footer" style="color:white; margin: 3em; padding-bottom: 1em;">
-                  
                   <div class="ui divider"></div>
                   <footer>&copy; 2024 Nitimur in Vetitum</footer>
                   <footer>Página creada por Juan Fecci</footer>
